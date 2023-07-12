@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Written by NicTau NTDEV888-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS page for DI to test Media Queries" />
+    <title>Page for testing CSS Media Queries</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!--Div Box where the colour should change-->
+        <div class="center-box">
+            Content that changes colour when the page size is adjusted
+        </div>
+        <div id="pixel-box">
+            Screen is 
+            <!--Script box to output the current screen width-->
+            <div id="scriptbox">
+            <script>
+                // This is an embeded Javascript, it shows the current screen width
+                //This piece below renders the width in pixels to the Div box 'scriptbox'
+                var initialW = window.innerWidth;
+                document.getElementById("scriptbox").innerHTML = initialW
+                
+                //This piece listens to your mouse to see if the screen changes width
+                //the function then outputs the amount of pixles into the Div 'scriptbox'
+                window.addEventListener('resize', function() {
+                var w = window.innerWidth;
+                document.getElementById("scriptbox").innerHTML = w
+                });
+            </script>
+            </div>
+            Pixels Wide
+        </div>
+    </div>
+    
+</body>
+</html>
